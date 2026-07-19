@@ -1,0 +1,39 @@
+{
+  "appTitle": "Bail Eligibility Check",
+  "appSubtitle": "Know your rights under BNSS Section 187",
+  "start": "Start",
+  "step": "Step {{current}} of {{total}}",
+  "back": "Back",
+  "next": "Next",
+  "questions": {
+    "offenceType": {
+      "label": "What type of offence is the case about?",
+      "minor": "Less serious offence (up to 7 years)",
+      "major": "Serious offence (more than 7 years)"
+    },
+    "arrestDate": {
+      "label": "When was the person arrested?",
+      "hint": "Select the date"
+    },
+    "chargesheetFiled": {
+      "label": "Has the chargesheet been filed?",
+      "yes": "Yes",
+      "no": "Not yet"
+    },
+    "district": {
+      "label": "Which district?"
+    }
+  },
+  "submit": "Check eligibility",
+  "checking": "Checking...",
+  "result": {
+    "eligibleTitle": "Eligible for default bail",
+    "eligibleBody": "The legal time limit has passed. You can apply for default bail now.",
+    "notEligibleTitle": "Not yet eligible",
+    "notEligibleBody": "{{days}} days remaining before the deadline.",
+    "downloadPdf": "Download bail application",
+    "findDlsa": "Find nearest legal aid office",
+    "checkAgain": "Check another case",
+    "error": "Something went wrong. Please try again."
+  }
+}
