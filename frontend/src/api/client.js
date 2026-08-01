@@ -2,7 +2,7 @@
 // Confirm this request/response shape against server.js before integrating for real —
 // this is written from the API contract described in planning, not from the live code.
 
-const USE_MOCK = false // flip to true to develop without the backend running
+const USE_MOCK = true // flip to true to develop without the backend running
 
 export async function checkEligibility({ offenceType, arrestDate, chargesheetFiled, district }) {
   if (USE_MOCK) {
