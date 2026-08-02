@@ -1,0 +1,143 @@
+[
+  {
+    "district": "Thiruvananthapuram",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Thiruvananthapuram",
+    "address": "District Court Buildings, ADR Centre, Vanchiyoor, Thiruvananthapuram-695035",
+    "phone": "0471-2467700",
+    "email": "dlsathiruvananthapuram@yahoo.com",
+    "lat": 8.492309,
+    "lng": 76.941011
+  },
+  {
+    "district": "Kollam",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Kollam",
+    "address": "District Court Buildings, Kollam-691013",
+    "phone": "0474-2791399",
+    "email": "dlsakollam@gmail.com",
+    "lat": 8.893284,
+    "lng": 76.574526
+  },
+  {
+    "district": "Pathanamthitta",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Pathanamthitta",
+    "address": "District Court Buildings, Pathanamthitta-689645",
+    "phone": "0468-2220141",
+    "email": "dlsapta@gmail.com",
+    "lat": 9.264627,
+    "lng": 76.788209
+  },
+  {
+    "district": "Alappuzha",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Alappuzha",
+    "address": "District Court Buildings, Alappuzha-688013",
+    "phone": "0477-2262495",
+    "email": "dlsaalpy100@gmail.com",
+    "lat": 9.503058,
+    "lng": 76.341579
+  },
+  {
+    "district": "Kottayam",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Kottayam",
+    "address": "ADR Centre, Near Malankara Quarters, Muttambalam P.O., Kottayam-686002",
+    "phone": "0481-2572422",
+    "email": "kottayamdlsa@gmail.com",
+    "lat": 9.580266,
+    "lng": 76.541922
+  },
+  {
+    "district": "Idukki (Thodupuzha)",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Idukki",
+    "address": "District Court Buildings, Muttom P.O., Thodupuzha, Idukki District – 685587",
+    "phone": "0486-2255383",
+    "email": "dlsathodupuzha@hotmail.com",
+    "lat": 9.844046,
+    "lng": 76.739877
+  },
+  {
+    "district": "Ernakulam",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Ernakulam",
+    "address": "ADR Centre, District Court Annex Buildings, Kaloor, Ernakulam-682017",
+    "phone": "0484-2344223",
+    "email": "dlsaekm@gmail.com",
+    "lat": 9.976084,
+    "lng": 76.279403
+  },
+  {
+    "district": "Thrissur",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Thrissur",
+    "address": "ADR Centre, District Court Buildings Civil Lane, Ayyanthole, Thrissur-680003",
+    "phone": "0487-2363770",
+    "email": "dlsathrissur@gmail.com",
+    "lat": 10.520224,
+    "lng": 76.188774
+  },
+  {
+    "district": "Palakkad",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Palakkad",
+    "address": "District Court Buildings, Palakkad-678001",
+    "phone": "0491-2505665",
+    "email": "dlsapkd@gmail.com",
+    "lat": 10.760911,
+    "lng": 76.658387
+  },
+  {
+    "district": "Malappuram (Manjeri)",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Malappuram",
+    "address": "District Court Buildings, Manjeri, Malappuram-676121",
+    "phone": "0483-2762220",
+    "email": "manjeridlsa@gmail.com",
+    "lat": 11.112145,
+    "lng": 76.120664
+  },
+  {
+    "district": "Kozhikode",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Kozhikode",
+    "address": "District Court Buildings, Kozhikode-673032",
+    "phone": "0495-2365048",
+    "email": "dlsakozhikode@gmail.com",
+    "lat": 11.252567,
+    "lng": 75.775484
+  },
+  {
+    "district": "Wayanad (Kalpetta)",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Wayanad",
+    "address": "District Court Buildings, Kalpetta, Wayanad District-673122",
+    "phone": " 0490-2344666",
+    "email": "dlsakalpetta@gmail.com",
+    "lat": 11.627916,
+    "lng": 76.088700
+  },
+  {
+    "district": "Kannur",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Kannur",
+    "address": "District Court Buildings,Thalassery,Kannur District-670101",
+    "phone": "04936-207800",
+    "email": "dlsakannurdistrict@gmail.com",
+    "lat": 11.757803,
+    "lng": 75.480456
+  },
+  {
+    "district": "Kasaragod",
+    "state": "Kerala",
+    "office": "District Legal Services Authority, Kasaragod",
+    "address": "District Court Buildings,Kasaragod-671123",
+    "phone": "04994-256189",
+    "email": "dlsaksgd@gmail.com",
+    "lat": 12.522270,
+    "lng": 75.016649
+  }
+
+]
