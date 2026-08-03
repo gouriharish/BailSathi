@@ -3,6 +3,12 @@ import { useTranslation } from 'react-i18next'
 
 const STEPS = ['offenceType', 'arrestDate', 'chargesheetFiled', 'district']
 
+const KERALA_DISTRICTS = [
+  'Thiruvananthapuram', 'Kollam', 'Pathanamthitta', 'Alappuzha', 'Kottayam',
+  'Idukki', 'Ernakulam', 'Thrissur', 'Palakkad', 'Malappuram', 'Kozhikode',
+  'Wayanad', 'Kannur', 'Kasaragod'
+]
+
 export default function QuestionFlow({ onComplete }) {
   const { t } = useTranslation()
   const [stepIndex, setStepIndex] = useState(0)
@@ -103,14 +109,21 @@ export default function QuestionFlow({ onComplete }) {
         {step === 'district' && (
           <>
             <h2 className="question-label">{t('questions.district.label')}</h2>
-            {/* TODO: swap for a <select> once Person 3's DLSA directory data lands */}
-            <input
-              type="text"
+            <select
               className="text-input"
               value={answers.district}
               onChange={(e) => update('district', e.target.value)}
               autoFocus
-            />
+            >
+              <option value="" disabled>
+                {t('questions.district.placeholder')}
+              </option>
+              {KERALA_DISTRICTS.map((d) => (
+                <option key={d} value={d}>
+                  {d}
+                </option>
+              ))}
+            </select>
           </>
         )}
 

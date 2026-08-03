@@ -9,7 +9,7 @@ export default defineConfig({
       // During dev, forwards /api calls to your local Express backend.
       // Change the target if Person 1's server runs on a different port.
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:4000',
         changeOrigin: true
       }
     }

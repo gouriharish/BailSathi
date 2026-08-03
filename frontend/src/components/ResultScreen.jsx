@@ -55,8 +55,12 @@ export default function ResultScreen({ result, threshold, onCheckAgain }) {
         {eligible ? t('result.eligibleTitle') : t('result.notEligibleTitle')}
       </h2>
       <p className="result-body">
-        {eligible ? t('result.eligibleBody') : t('result.notEligibleBody', { days: daysRemaining })}
-      </p>
+  {eligible
+    ? t('result.eligibleBody')
+    : result.reason === 'chargesheet_filed'
+    ? t('result.chargesheetFiledBody')
+    : t('result.notEligibleBody', { days: daysRemaining })}
+</p>
 
       <div className="result-actions">
         {eligible && (

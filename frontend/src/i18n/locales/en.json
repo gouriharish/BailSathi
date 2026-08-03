@@ -21,16 +21,18 @@
       "no": "Not yet"
     },
     "district": {
-      "label": "Which district?"
+      "label": "Which district?",
+      "placeholder": "Select a district"
     }
   },
   "submit": "Check eligibility",
   "checking": "Checking...",
-  "result": {
+   "result": {
     "eligibleTitle": "Eligible for default bail",
     "eligibleBody": "The legal time limit has passed. You can apply for default bail now.",
     "notEligibleTitle": "Not yet eligible",
     "notEligibleBody": "{{days}} days remaining before the deadline.",
+    "chargesheetFiledBody": "The chargesheet has already been filed, so default bail on this ground no longer applies.",
     "downloadPdf": "Download bail application",
     "findDlsa": "Find nearest legal aid office",
     "checkAgain": "Check another case",
