@@ -10,11 +10,13 @@ export default function App() {
   const { t } = useTranslation()
   const [view, setView] = useState('form')
   const [result, setResult] = useState(null)
+  const [userAnswers, setUserAnswers] = useState(null) // <-- Saved user answers (contains district)
   const [threshold, setThreshold] = useState(60)
   const [errorMsg, setErrorMsg] = useState('')
 
   async function handleComplete(answers) {
     setView('loading')
+    setUserAnswers(answers) // <-- Store answers in state!
     setThreshold(answers.offenceType === 'major' ? 90 : 60)
     try {
       const data = await checkEligibility(answers)
@@ -28,6 +30,7 @@ export default function App() {
 
   function reset() {
     setResult(null)
+    setUserAnswers(null)
     setView('form')
   }
 
@@ -50,7 +53,12 @@ export default function App() {
       )}
 
       {view === 'result' && (
-        <ResultScreen result={result} threshold={threshold} onCheckAgain={reset} />
+        <ResultScreen 
+          result={result} 
+          userAnswers={userAnswers} // <-- Pass userAnswers here!
+          threshold={threshold} 
+          onCheckAgain={reset} 
+        />
       )}
 
       {view === 'error' && (

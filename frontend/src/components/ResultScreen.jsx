@@ -1,88 +1,56 @@
-import { useTranslation } from 'react-i18next'
+import React from 'react'
+import OfficeFinder from './OfficeFinder'
 
-const RADIUS = 54
-const CIRCUMFERENCE = 2 * Math.PI * RADIUS
+export default function ResultScreen({ result, userAnswers, threshold, onCheckAgain }) {
+  // Extract district directly from userAnswers passed by App.jsx
+  const selectedDistrict = userAnswers?.district || result?.district || ""
 
-export default function ResultScreen({ result, threshold, onCheckAgain }) {
-  const { t } = useTranslation()
-
-  if (!result) return null
-
-  const { eligible, daysRemaining } = result
-  const daysElapsed = Math.max(threshold - daysRemaining, 0)
-  const progress = eligible ? 1 : Math.min(daysElapsed / threshold, 1)
-  const dashOffset = CIRCUMFERENCE * (1 - progress)
-  const ringColor = eligible ? 'var(--color-success)' : 'var(--color-waiting)'
+  const isEligible = result?.isEligible ?? false
 
   return (
-    <div className="result-card">
-      <span className={`status-banner ${eligible ? 'eligible' : 'waiting'}`}>
-        {eligible ? t('result.eligibleTitle') : t('result.notEligibleTitle')}
-      </span>
-
-      <svg
-        className="result-ring"
-        width="140"
-        height="140"
-        viewBox="0 0 140 140"
-        role="img"
-        aria-label={eligible ? t('result.eligibleTitle') : t('result.notEligibleBody', { days: daysRemaining })}
-      >
-        <circle cx="70" cy="70" r={RADIUS} fill="none" stroke="var(--color-border)" strokeWidth="10" />
-        <circle
-          cx="70"
-          cy="70"
-          r={RADIUS}
-          fill="none"
-          stroke={ringColor}
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeDasharray={CIRCUMFERENCE}
-          strokeDashoffset={dashOffset}
-          transform="rotate(-90 70 70)"
-        />
-        <text x="70" y="64" textAnchor="middle" fontSize="30" fontWeight="800" fill="var(--color-ink)">
-          {eligible ? '✓' : daysRemaining}
-        </text>
-        {!eligible && (
-          <text x="70" y="86" textAnchor="middle" fontSize="12" fill="var(--color-ink-soft)">
-            days
-          </text>
+    <div className="result-screen-container max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg border border-gray-100 my-6">
+      
+      {/* 1. Status Banner */}
+      <div className={`p-5 rounded-lg text-center mb-6 border ${
+        isEligible 
+          ? 'bg-green-50 text-green-900 border-green-200' 
+          : 'bg-amber-50 text-amber-900 border-amber-200'
+      }`}>
+        <h2 className="text-2xl font-bold">
+          {isEligible ? "Eligible for Default Bail" : "Not Currently Eligible"}
+        </h2>
+        
+        {result?.message && (
+          <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            {result.message}
+          </p>
         )}
-      </svg>
-
-      <h2 className={`result-title ${eligible ? 'eligible' : 'waiting'}`}>
-        {eligible ? t('result.eligibleTitle') : t('result.notEligibleTitle')}
-      </h2>
-      <p className="result-body">
-  {eligible
-    ? t('result.eligibleBody')
-    : result.reason === 'chargesheet_filed'
-    ? t('result.chargesheetFiledBody')
-    : t('result.notEligibleBody', { days: daysRemaining })}
-</p>
-
-      <div className="result-actions">
-        {eligible && (
-          <>
-            {/* Stubs for Person 3's work — wire these up once jsPDF + DLSA data land */}
-            <button type="button" className="btn btn-primary" onClick={() => alert('TODO: jsPDF generation')}>
-              {t('result.downloadPdf')}
-            </button>
-            <button type="button" className="btn btn-secondary" onClick={() => alert('TODO: DLSA map link')}>
-              {t('result.findDlsa')}
-            </button>
-          </>
-        )}
-        {!eligible && (
-          <button type="button" className="btn btn-secondary" onClick={() => alert('TODO: DLSA map link')}>
-            {t('result.findDlsa')}
-          </button>
-        )}
-        <button type="button" className="btn btn-secondary" onClick={onCheckAgain}>
-          {t('result.checkAgain')}
-        </button>
       </div>
+
+      {/* 2. Office Finder & Map Section (Person 3) */}
+      <div className="office-section mt-8 border-t pt-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-1">
+          Nearest Legal Aid Office
+        </h3>
+        <p className="text-sm text-gray-500 mb-4">
+          Visit your District Legal Services Authority (DLSA) for free legal support.
+        </p>
+
+        {/* Pass the exact district selected by user */}
+        <OfficeFinder selectedDistrict={selectedDistrict} />
+      </div>
+
+      {/* 3. Check Again Button */}
+      {onCheckAgain && (
+        <div className="mt-8 text-center">
+          <button
+            onClick={onCheckAgain}
+            className="btn btn-primary px-6 py-2.5 bg-slate-800 hover:bg-slate-900 text-white font-medium rounded-lg shadow-sm transition duration-150"
+          >
+            Check another case
+          </button>
+        </div>
+      )}
     </div>
   )
 }
